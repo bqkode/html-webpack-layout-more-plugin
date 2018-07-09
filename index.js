@@ -11,7 +11,7 @@ HtmlWebpackLayoutPlugin.prototype.apply = function (compiler) {
 
     compilation.plugin('html-webpack-plugin-before-html-processing', function(htmlPluginData, callback) {
       htmlPluginData.html = that.handleLayout( htmlPluginData.html , htmlPluginData.plugin.options);
-      callback(null, htmlPluginData);
+      return htmlPluginData;
     });
   });
 };
